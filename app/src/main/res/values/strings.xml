@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Puppy</string>
+    <string name="nombre_mascota">Perrito</string>
+    <string name="cantidad_likes">0</string>
+</resources>
