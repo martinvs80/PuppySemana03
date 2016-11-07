@@ -8,13 +8,6 @@
     android:elevation="@dimen/elevacion_actionbar"
     android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
     app:popupTheme="@style/Theme.AppCompat.Light">
-    <ImageButton
-        android:id="@+id/btnStar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@mipmap/star"
-        android:layout_gravity="right"
 
-        />
 
 </android.support.v7.widget.Toolbar>

@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.mvazquez.puppy">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -15,13 +17,27 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".TopFive"
+        <activity
+            android:name=".TopFive"
             android:parentActivityName=".MainActivity">
-            >
             <meta-data
                 android:name="android.support.PARENT_ACTIVIY"
-                android:value=".MainActivity"
-                ></meta-data>
+                android:value=".MainActivity" />
+        </activity>
+        <activity
+            android:name=".Formulario"
+            android:parentActivityName=".MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVIY"
+                android:value=".MainActivity" />
+        </activity>
+        <activity
+            android:name=".BioDesarrollador"
+            android:parentActivityName=".MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVIY"
+                android:value=".MainActivity" />
+
         </activity>
     </application>
 

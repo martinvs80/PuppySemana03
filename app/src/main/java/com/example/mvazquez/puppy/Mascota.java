@@ -17,6 +17,11 @@ public class Mascota {
         this.cuentaLikes = cuentaLikes;
         this.huesoAmarillo = huesoAmarillo;
     }
+    public Mascota(int fotoMascota, String cuentaLikes, int huesoAmarillo) {
+        this.fotoMascota = fotoMascota;
+        this.cuentaLikes = cuentaLikes;
+        this.huesoAmarillo = huesoAmarillo;
+    }
 
     public int getFotoMascota() {
         return fotoMascota;

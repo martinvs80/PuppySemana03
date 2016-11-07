@@ -5,4 +5,5 @@
     <dimen name="corner_radius_cardview">4dp</dimen>
     <dimen name="tamaño_nombre">30dp</dimen>
     <dimen name="elevacion_actionbar">4dp</dimen>
+    <dimen name="borde_floatingbutton">16dp</dimen>
 </resources>
