@@ -1,4 +1,4 @@
-package com.example.mvazquez.puppy;
+package com.example.mvazquez.puppy.adapter;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;

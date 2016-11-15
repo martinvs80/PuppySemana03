@@ -1,4 +1,4 @@
-package com.example.mvazquez.puppy;
+package com.example.mvazquez.puppy.vista.fragment;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -9,34 +9,32 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.mvazquez.puppy.R;
+import com.example.mvazquez.puppy.adapter.MascotaAdaptador;
+import com.example.mvazquez.puppy.pojo.Mascota;
+import com.example.mvazquez.puppy.presentador.IRecyclerViewFragmentPresenter;
+import com.example.mvazquez.puppy.presentador.RecyclerViewFragmentPresenter;
+
 import java.util.ArrayList;
 
 /**
  * Created by MVazquez on 06/11/2016.
  */
-public class RecyclerViewFragment extends Fragment {
+public class RecyclerViewFragment extends Fragment implements IRecyclerViewFragmentView {
     ArrayList<Mascota> mascotas;
     private RecyclerView listaMascotas;
+    private IRecyclerViewFragmentPresenter presenter;
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_recyclerview,container,false);
 
         listaMascotas = (RecyclerView) v.findViewById(R.id.rvMascotas);
-        LinearLayoutManager llm = new LinearLayoutManager(getActivity());
-        llm.setOrientation(LinearLayoutManager.VERTICAL);
-
-        listaMascotas.setLayoutManager(llm);
-        inicializarListaMascotas();
-        inicializaAdaptador();
-
+        presenter = new RecyclerViewFragmentPresenter(this,getContext());
         return v;
     }
-    public void inicializaAdaptador(){
-        MascotaAdaptador adaptador = new MascotaAdaptador(mascotas,getActivity());
-        listaMascotas.setAdapter(adaptador);
-    }
-    public void inicializarListaMascotas(){
+
+    /*public void inicializarListaMascotas(){
         mascotas = new ArrayList<Mascota>();
 
         mascotas.add(new Mascota(R.drawable.mascota02, R.mipmap.huesobco, "Maya", "0",R.mipmap.huesoama));
@@ -48,5 +46,24 @@ public class RecyclerViewFragment extends Fragment {
         mascotas.add(new Mascota(R.drawable.mascota07, R.mipmap.huesobco, "Sabueso", "0",R.mipmap.huesoama));
 
 
+    }*/
+
+    @Override
+    public void generarLinearLayoutVertical() {
+        LinearLayoutManager llm = new LinearLayoutManager(getActivity());
+        llm.setOrientation(LinearLayoutManager.VERTICAL);
+
+        listaMascotas.setLayoutManager(llm);
+    }
+
+    @Override
+    public MascotaAdaptador crearAdaptador(ArrayList<Mascota> mascotas) {
+        MascotaAdaptador adaptador = new MascotaAdaptador(mascotas,getActivity());
+        return adaptador;
+    }
+
+    @Override
+    public void inicializarAdaptadorRV(MascotaAdaptador adaptador) {
+        listaMascotas.setAdapter(adaptador);
     }
 }

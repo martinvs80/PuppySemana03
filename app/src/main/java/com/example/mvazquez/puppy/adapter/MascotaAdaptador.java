@@ -1,7 +1,6 @@
-package com.example.mvazquez.puppy;
+package com.example.mvazquez.puppy.adapter;
 
 import android.app.Activity;
-import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,8 +10,11 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.mvazquez.puppy.R;
+import com.example.mvazquez.puppy.db.ConstructorMascotas;
+import com.example.mvazquez.puppy.pojo.Mascota;
+
 import java.util.ArrayList;
-import java.util.StringTokenizer;
 
 /**
  * Created by MVazquez on 30/10/2016.
@@ -32,7 +34,7 @@ public class MascotaAdaptador extends RecyclerView.Adapter<MascotaAdaptador.Masc
     }
 
     @Override
-    public void onBindViewHolder(MascotaViewHolder mascotaViewHolder, int position) {
+    public void onBindViewHolder(final MascotaViewHolder mascotaViewHolder, int position) {
         final Mascota mascota = mascotas.get(position);
         mascotaViewHolder.imgFoto.setImageResource(mascota.getFotoMascota());
         mascotaViewHolder.tvNombreMascota.setText(mascota.getNombreMascota());
@@ -41,13 +43,18 @@ public class MascotaAdaptador extends RecyclerView.Adapter<MascotaAdaptador.Masc
         mascotaViewHolder.btnLike.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String contador;
+                /*String contador;
                 int suma;
-                Toast.makeText(activity ,"Diste like a: " + mascota.getNombreMascota(),Toast.LENGTH_SHORT).show();
                 contador = mascota.getCuentaLikes();
                 suma = Integer.parseInt(contador);
                 suma = suma + 1;
-                mascota.setCuentaLikes(String.valueOf(suma));
+                mascota.setCuentaLikes(String.valueOf(suma));*/
+                Toast.makeText(activity ,"Diste like a: " + mascota.getNombreMascota(),Toast.LENGTH_SHORT).show();
+                ConstructorMascotas constructorMascotas = new ConstructorMascotas(activity);
+                constructorMascotas.darLikeMascota(mascota);
+
+                mascotaViewHolder.tvLikes.setText(String.valueOf(constructorMascotas.obtenerLikesMascota(mascota)));
+
             }
         });
     }

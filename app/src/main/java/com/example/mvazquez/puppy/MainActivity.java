@@ -7,15 +7,16 @@ import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
+
+import com.example.mvazquez.puppy.adapter.PageAdapter;
+import com.example.mvazquez.puppy.vista.fragment.RecyclerViewFragment;
+import com.example.mvazquez.puppy.vista.fragment.RecyclerViewGridFragment;
 
 import java.util.ArrayList;
 

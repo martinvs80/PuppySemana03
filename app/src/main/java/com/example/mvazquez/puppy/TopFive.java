@@ -5,9 +5,9 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
-import android.view.View;
-import android.widget.ImageButton;
-import android.widget.Toast;
+
+import com.example.mvazquez.puppy.adapter.MascotaAdaptador;
+import com.example.mvazquez.puppy.pojo.Mascota;
 
 import java.util.ArrayList;
 
@@ -41,8 +41,8 @@ public class TopFive extends AppCompatActivity {
     public void inicializarListaMascotas(){
         mascotas = new ArrayList<Mascota>();
 
-        mascotas.add(new Mascota(R.drawable.mascota02, R.mipmap.huesobco, "Maya", "0",R.mipmap.huesoama));
-        mascotas.add(new Mascota(R.drawable.mascota01, R.mipmap.huesobco, "Legolas", "0",R.mipmap.huesoama));
+        mascotas.add(new Mascota(R.drawable.mascota02, R.mipmap.huesobco, "Maya", "5",R.mipmap.huesoama));
+        mascotas.add(new Mascota(R.drawable.mascota01, R.mipmap.huesobco, "Legolas", "3",R.mipmap.huesoama));
         mascotas.add(new Mascota(R.drawable.mascota03, R.mipmap.huesobco, "Goliat", "0",R.mipmap.huesoama));
         mascotas.add(new Mascota(R.drawable.mascota05, R.mipmap.huesobco, "Reina", "0",R.mipmap.huesoama));
         mascotas.add(new Mascota(R.drawable.mascota07, R.mipmap.huesobco, "Sabueso", "0",R.mipmap.huesoama));

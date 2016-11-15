@@ -1,9 +1,10 @@
-package com.example.mvazquez.puppy;
+package com.example.mvazquez.puppy.pojo;
 
 /**
  * Created by MVazquez on 30/10/2016.
  */
 public class Mascota {
+    private int id_mascota;
     private int fotoMascota;
     private int huesoBlanco;
     private String nombreMascota;
@@ -21,6 +22,18 @@ public class Mascota {
         this.fotoMascota = fotoMascota;
         this.cuentaLikes = cuentaLikes;
         this.huesoAmarillo = huesoAmarillo;
+    }
+
+    public Mascota() {
+
+    }
+
+    public int getId_mascota() {
+        return id_mascota;
+    }
+
+    public void setId_mascota(int id_mascota) {
+        this.id_mascota = id_mascota;
     }
 
     public int getFotoMascota() {
